@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "name": "JavaScript入门", "value": 3245 },
+    { "name": "Python数据分析", "value": 2812 },
+    { "name": "UI/UX设计", "value": 2156 },
+    { "name": "算法与数据结构", "value": 1876 },
+    { "name": "云原生架构", "value": 1432 }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "nodes": [
+    { "id": "0", "name": "教学中心", "category": 0, "symbolSize": 60 },
+    { "id": "1", "name": "课程管理", "category": 1, "symbolSize": 30 },
+    { "id": "2", "name": "学员管理", "category": 1, "symbolSize": 30 },
+    { "id": "3", "name": "考试系统", "category": 1, "symbolSize": 30 },
+    { "id": "4", "name": "数据分析", "category": 2, "symbolSize": 30 },
+    { "id": "5", "name": "直播课堂", "category": 2, "symbolSize": 30 },
+    { "id": "6", "name": "作业批改", "category": 3, "symbolSize": 25 },
+    { "id": "7", "name": "答疑系统", "category": 3, "symbolSize": 25 },
+    { "id": "8", "name": "证书管理", "category": 3, "symbolSize": 25 }
+  ],
+  "links": [
+    { "source": "0", "target": "1" },
+    { "source": "0", "target": "2" },
+    { "source": "0", "target": "3" },
+    { "source": "0", "target": "4" },
+    { "source": "0", "target": "5" },
+    { "source": "1", "target": "6" },
+    { "source": "2", "target": "7" },
+    { "source": "3", "target": "8" },
+    { "source": "4", "target": "5" },
+    { "source": "1", "target": "3" },
+    { "source": "2", "target": "6" }
+  ]
+}

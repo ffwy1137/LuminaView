@@ -1,0 +1,11 @@
+{
+  "events": [
+    { "id": 1, "time": "14:32:05", "level": "info", "event": "用户 张三 完成课程《React进阶》结业考试" },
+    { "id": 2, "time": "14:32:08", "level": "success", "event": "系统备份任务完成，耗时 3.2s" },
+    { "id": 3, "time": "14:32:15", "level": "warn", "event": "服务器 Node-03 CPU使用率达到 85%" },
+    { "id": 4, "time": "14:32:22", "level": "info", "event": "新课程《机器学习实战》已上架" },
+    { "id": 5, "time": "14:32:30", "level": "success", "event": "今日学习时长统计报表生成完毕" },
+    { "id": 6, "time": "14:32:45", "level": "info", "event": "管理员 李四 更新了课程分类标签" },
+    { "id": 7, "time": "14:32:58", "level": "warn", "event": "存储集群磁盘使用率达到 78%，建议扩容" }
+  ]
+}
