@@ -89,7 +89,7 @@ npm run test:e2e   # Playwright E2E
 
 ## 📸 预览
 
-> 「预览截图」建议在浏览器打开后截图，并替换为本仓库中的实际展示图。
+![LuminaView 预览](docs/preview.png)
 
 ## 📄 许可证
 
