@@ -1,88 +1,100 @@
 # LuminaView · 流光视窗
 
-> 一个从 0 到 1 手把手教你制作数据可视化大屏的开源学习项目。
+> 教育行业综合运营数据指挥大屏，面向教务/运营管理人员的全局教学数据实时监控。
 
-LuminaView（流光视窗）是一个**公开、零基础友好**的数据大屏教学项目。它不追求一步到位的成品，而是陪伴你从第一行代码开始，逐步理解并亲手实现一个真正可用的数据可视化大屏。
+LuminaView（流光视窗）是一个以**教学数据中心**为场景的数据可视化大屏项目，深色科技驾驶舱风格，用于集中展示核心业务指标、访问趋势、课程分布、业务关联网络、城市访问排名与能力评估，并配套实时事件流，适配远距离大屏观看与日常运营监控。
 
-本项目参考了 [DaPengRuYi/RuyiBigScreen](https://github.com/DaPengRuYi/RuyiBigScreen) 的思路，并在此基础上强调「学习过程」：每个阶段都可运行、可观察、可修改。
+## ✨ 特点
 
----
+- 📊 **业务导向**：围绕教学数据中心设计 KPI、趋势、占比、关联网络、排名与雷达。
+- 🎨 **统一视觉**：深海藏青 + 荧光青蓝主色调，发光边框、轻量化渐变与统一菱形标识。
+- 🧩 **模块化拆分**：核心指标、趋势分析、分类占比、业务关联、城市排名、能力评估、实时事件，清晰分区。
+- 📐 **全屏适配**：固定 1920×1080 设计稿，等比缩放居中布局，无横向/纵向溢出。
 
-## ✨ 项目特点
+## 🛠 技术栈
 
-- 🧑‍🎓 **零基础友好**：假设你不了解前端、不了解可视化，从环境搭建讲起。
-- 🪜 **循序渐进**：按「基础 → 组件 → 布局 → 数据 → 进阶」分阶段推进。
-- 🧩 **可运行可修改**：每个示例都尽量独立、可运行，鼓励你动手改。
-- 📖 **边做边学**：在造大屏的过程中，自然掌握 HTML / CSS / JavaScript 与可视化库。
-
----
-
-## 🛠 技术栈（规划中）
-
-| 方向 | 选型（待逐步确定） |
+| 方向 | 选型 |
 | --- | --- |
-| 基础 | HTML + CSS + JavaScript |
-| 可视化 | ECharts（主流、文档友好，零基础首选） |
-| 构建（可选） | 原生即可，后续可引入 Vite |
-| 数据 | 静态 JSON / 模拟接口，逐步接入真实数据 |
-
-> 技术栈会随项目推进在文档中持续更新，初期以「浏览器原生 + ECharts」最易上手。
-
----
+| 基础 | Vue 3 + TypeScript + Vite |
+| 状态管理 | Pinia |
+| 可视化 | ECharts + vue-echarts |
+| 测试 | Vitest、Playwright |
+| 代码规范 | ESLint + Prettier |
+| 数据 | Mock 接口，支持接入真实后端 |
 
 ## 🚀 快速开始
 
-> 当前为项目初始化阶段，骨架将随教程陆续补充。
+```bash
+git clone https://github.com/ffwy1137/LuminaView.git
+cd LuminaView
+npm install
+npm run dev
+```
 
-1. 克隆仓库：
-   ```bash
-   git clone https://github.com/<你的用户名>/LuminaView.git
-   cd LuminaView
-   ```
-2. 用浏览器直接打开 `index.html`（后续提供）。
-3. 跟着文档 / 分支逐步学习与修改。
+构建预览：
 
----
+```bash
+npm run build
+npm run preview
+```
 
-## 📁 目录结构（规划）
+也可以直接打开浏览器访问 Vite 输出的本地地址（通常是 `http://localhost:5173`）。
+
+## 📁 目录结构
 
 ```
 LuminaView/
-├── README.md          # 项目说明
-├── LICENSE            # MIT 开源协议
-├── index.html         # 大屏入口（待补充）
-├── src/               # 源码（待补充）
-├── assets/            # 静态资源（待补充）
-└── docs/              # 学习文档（待补充）
+├── index.html                   # 入口 HTML
+├── package.json                 # 项目依赖与脚本
+├── vite.config.ts               # Vite 配置（含 Mock 插件与路径别名）
+├── src/
+│   ├── main.ts                  # 应用入口
+│   ├── App.vue                  # 根组件（全屏缩放布局）
+│   ├── assets/
+│   │   └── styles/              # 全局样式与 CSS 变量
+│   ├── modules/
+│   │   ├── header/              # 顶部标题与时钟
+│   │   ├── overview/            # 核心指标概览
+│   │   ├── trend/               # 访问趋势折线图
+│   │   ├── categories/          # 课程分类占比环形图
+│   │   ├── map/                 # 业务关联网络图
+│   │   ├── ranking/             # 城市访问排名柱状图
+│   │   ├── capabilities/        # 能力雷达图
+│   │   └── realtime/            # 实时事件流
+│   ├── shared/
+│   │   └── components/          # 通用光效边框等组件
+│   ├── stores/                  # Pinia 数据状态
+│   ├── services/                # API 层
+│   ├── types/                   # TypeScript 类型定义
+│   ├── utils/                   # 工具函数（缩放适配、日志等）
+│   ├── mock/                    # Mock 数据与接口
+│   └── vite-env.d.ts            # Vite 类型声明
+└── tests/
+    ├── unit/                    # 单元测试
+    └── e2e/                     # E2E 测试（Playwright）
 ```
 
----
+## 📌 脚本说明
 
-## 🗺 学习路径（规划）
+```bash
+npm run dev        # 启动开发服务器（默认端口 5173）
+npm run build      # 类型检查 + 生产构建
+npm run preview    # 预览生产构建产物
+npm run lint       # ESLint 检查
+npm run format     # Prettier 格式化
+npm test           # Vitest 单测
+npm run test:watch # 单测监听模式
+npm run test:e2e   # Playwright E2E
+```
 
-1. 环境准备：编辑器、浏览器、本地预览。
-2. 大屏基础：分辨率、适配、全屏布局。
-3. 可视化入门：用 ECharts 画出第一个图表。
-4. 组件拼装：标题、图表卡片、边框装饰。
-5. 数据接入：从静态数据到动态更新。
-6. 进阶美化：动画、主题、自适应。
+## 📸 预览
 
----
-
-## 🤝 贡献
-
-这是一个面向学习的开源项目，欢迎一起完善：
-
-- 提交 Issue 指出错误或不清晰的地方。
-- 提交 Pull Request 补充示例、文档或修正。
-- 在讨论区分享你做的大屏。
-
----
+> 「预览截图」建议在浏览器打开后截图，并替换为本仓库中的实际展示图。
 
 ## 📄 许可证
 
 本项目基于 [MIT 许可证](./LICENSE) 开源，可自由学习、修改与分享。
 
----
+## 🤝 贡献
 
-<p align="center">用流光，看见数据。</p>
+欢迎提交 Issue 或 Pull Request 完善数据源、图表交互、视觉细节与测试用例。
